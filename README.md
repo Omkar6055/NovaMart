@@ -71,4 +71,6 @@ If you want to view the code or run it on your machine:
 
 ## 📬 Contact
 
-Omkar Kshirsagar : [LinkedIn Profile : https://www.linkedin.com/in/omkar-kshirsagar-010b77237] /  [Email Address :kshirsagaromkar4343@gmail.com] 
+Omkar Kshirsagar :
+LinkedIn Profile : https://www.linkedin.com/in/omkar-kshirsagar-010b77237 
+Email Address :kshirsagaromkar4343@gmail.com
