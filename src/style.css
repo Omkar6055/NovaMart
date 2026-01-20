@@ -1,0 +1,231 @@
+/* =========================================
+   1. GLOBAL RESET & TYPOGRAPHY
+   ========================================= */
+   * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif; /* Amazon uses standard fonts */
+    margin: 0;
+    padding: 0;
+    background-color: #e3e6e6; /* The light gray background */
+    color: #0F1111;
+  }
+  
+  /* =========================================
+     2. AMAZON HEADER (The Dark Blue Bar)
+     ========================================= */
+  .navbar {
+    background-color: #131921;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo */
+  .nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+  }
+  .nav-logo:hover { border-color: white; }
+  
+  /* "Deliver to" Section */
+  .nav-location {
+    display: flex;
+    flex-direction: column;
+    color: #cccccc;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+  }
+  .nav-location:hover { border-color: white; }
+  .nav-location strong { color: white; font-size: 14px; font-weight: bold; }
+  
+  /* =========================================
+     3. THE SEARCH BAR (Centerpiece)
+     ========================================= */
+  .search-bar-container {
+    flex-grow: 1;
+    height: 40px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    margin: 0 10px;
+  }
+  
+  .search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 0 15px;
+    font-size: 15px;
+    outline: none;
+  }
+  .search-input:focus {
+    /* That orange outline when you type */
+    box-shadow: 0 0 0 3px #F90; 
+  }
+  
+  .search-btn {
+    width: 45px;
+    background-color: #febd69; /* Amazon Yellow */
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .search-btn:hover { background-color: #f3a847; }
+  
+  /* =========================================
+     4. HEADER RIGHT (Cart & Account)
+     ========================================= */
+  .nav-option {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+  }
+  .nav-option:hover { border-color: white; }
+  
+  .option-one { font-size: 12px; }
+  .option-two { font-size: 14px; font-weight: bold; }
+  
+  .cart-link {
+    display: flex;
+    align-items: flex-end;
+    font-weight: bold;
+    font-size: 14px;
+    gap: 5px;
+  }
+  
+  /* =========================================
+     5. SUB-HEADER (Categories)
+     ========================================= */
+  .sub-nav {
+    background-color: #232f3e; /* Lighter Blue */
+    color: white;
+    padding: 8px 20px;
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .sub-nav span { cursor: pointer; padding: 5px; border: 1px solid transparent; }
+  .sub-nav span:hover { border-color: white; }
+  
+  /* =========================================
+     6. HERO BANNER
+     ========================================= */
+  .hero-banner {
+    width: 100%;
+    height: 300px;
+    background-image: url('https://images-eu.ssl-images-amazon.com/images/G/31/Events/img23/Jupiter23/Homepage/J23_P1_PC_Header_Unrec_V2.jpg');
+    background-size: cover;
+    background-position: center top;
+    /* The gradient fade at the bottom */
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    margin-bottom: -150px; /* Pulls content up over the banner */
+  }
+  
+  /* =========================================
+     7. PRODUCT GRID & CARDS
+     ========================================= */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .card {
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    z-index: 1; /* Ensures it sits on top of banner */
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    /* Subtler Amazon hover effect */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+  }
+  
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+  }
+  
+  .card h4 {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #0F1111;
+  }
+  .card h4:hover { color: #c7511f; } /* Orange hover on title */
+  
+  /* =========================================
+     8. PRICING & BUTTONS
+     ========================================= */
+  .price-tag {
+    font-size: 21px;
+    font-weight: 500; /* Not too bold */
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  .price-tag span { font-size: 12px; vertical-align: top; padding-right: 2px; }
+  
+  .deal-badge {
+    background-color: #CC0C39;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 6px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  
+  .btn-primary {
+    background-color: #ffd814; /* Buy Button Yellow */
+    border: 1px solid #FCD200;
+    border-radius: 20px; /* Rounded pill shape */
+    padding: 8px 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 13px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(213, 217, 217, .5);
+  }
+  .btn-primary:hover { background-color: #f7ca00; }
